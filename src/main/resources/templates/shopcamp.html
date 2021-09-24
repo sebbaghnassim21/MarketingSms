@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Campagne</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+<!-- <link rel="stylesheet" type="text/css" href="../static/btright.css"> </link> -->
+
+<style type="text/css">
+body { font-size:10pt }
+.lbar { float:left ; width:500px }
+.rbar { float:right ; width:100px }
+/* .middle { margin-left:400px; margin-right:400px } */
+
+</style>
+
+
+
+</head>
+<body>
+
+
+
+<div layout:fragment="content">
+
+  <div class="container">
+  <div class="spacer col-md-8 col-md-offset-2 col-xs-12 ">
+  <div class="panel panel-default">
+   
+  <div class="panel-heading">Campagne</div>
+  <div class="panel-body">
+  
+ <form th:action="@{/suivant(email=${#httpServletRequest.remoteUser})}" method="post">
+  
+<h1>                 </h1>
+   <!-- <div class="form-group"> -->
+
+  
+ 
+  <label class="control-label">Nom de Campagne</label>
+  <input class="form-control" type="text" name="nommag" th:fieled="*{shop.nommag}"></input>
+ 
+<div class="form-group">
+  <label class="control-label">type</label>
+  <select class="form-control"  name="typecomp" th:fieled="*{shop.typecomp}">
+  <option>Information </option>
+  <option>Questions</option>
+</select>
+ </div>
+ 
+
+  <!-- <input class="form-control" type="text" name="codesms" th:fieled="*{shop.codesms}"></input> -->
+
+ <label class="control-label">N° TEL</label>
+  <input class="form-control" type="text" name="twilio" th:fieled="*{shop.twilio}"></input>
+
+
+ <label class="control-label">Auth Token</label>
+  <input class="form-control" type="text" name="authtoken" th:fieled="*{shop.authtoken}"></input>
+
+
+ <label class="control-label">Account SID</label>
+  <input class="form-control" type="text" name="accountsid" th:fieled="*{shop.accountsid}"></input>
+  
+<div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+    
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+<div class="rbar">
+    <button  type="submit"  class="btn btn-primary btn-block">Suivant</button>  
+ 
+  </div>
+       
+ 
+   
+     
+ 
+  
+
+
+  </form>
+ 
+    </div>
+ 
+  </div> 
+  </div>
+  </div>
+  </div>
+
+   
+</body>
+</html>

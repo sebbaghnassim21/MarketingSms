@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Question oui ou non</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+</head>
+<body>
+
+
+
+<div layout:fragment="content">
+
+  <div class="container">
+  <div class="spacer col-md-8 col-md-offset-2 col-xs-12 ">
+  <div class="panel panel-default">
+   
+  <!-- <div class="panel-heading">Modifier Question</div> -->
+  <div class="alert alert-info" >Question dont la réponse est Oui ou Non</div>
+  <div class="panel-body">
+  
+
+  <form th:action="@{savequestionedit(type='questionanswer',idm=${idm},t=${t})}" method="post">
+<h1>                 </h1>
+   <!-- <div class="form-group"> -->
+
+  
+  <!-- <label class="control-label">Id</label> -->
+  <input class="form-control" type="text" name="id" type="hidden" th:value="${question.id}"></input>
+   <input class="form-control" type="text" name="nques" type="hidden" th:value="${question.nques}"></input>
+  <div class="alert alert-warning" > Ajouter le text "Réponder 1 pour Oui ou 2 pour Non ." sur votre question</div>
+  <label class="control-label">Question</label>
+   <textarea class="form-control" rows="3" id="comment"  name="text"  th:field="*{question.text}"></textarea>
+     
+  
+  
+  
+   
+  <div> <label class="control-label"></label></div>
+  <div class="alert alert-danger" > Si la réponse est Non </div>
+   <label class="control-label">Message ou Question </label>
+
+    <textarea class="form-control" rows="3"  name="questiona" th:field="*{question.questiona}"></textarea>
+
+  <label class="control-label">Message ou Question</label>
+
+<textarea class="form-control" rows="3"  name="questionb" th:field="*{question.questionb}"></textarea>
+
+
+ <label class="control-label">Message ou Question</label>
+
+  <textarea class="form-control" rows="3"   name="questionc" th:field="*{question.questionc}"></textarea>
+   <label class="control-label">Message ou Question</label>
+
+    <textarea class="form-control" rows="3"  name="questiond" th:field="*{question.questiond}"></textarea>
+   <label class="control-label">Message ou Question</label>
+
+      <textarea class="form-control" rows="3"   name="questione" th:field="*{question.questione}"></textarea>
+  
+  
+ <div>
+ <p><font  >                                  </font></p>
+  <button type="submit" class="btn btn-primary">  Sauvegarder   </button>
+  </div>
+
+  </form>
+<div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+
+    </div>
+ 
+  </div> 
+  </div>
+  </div>
+  </div>
+</body>
+</html>

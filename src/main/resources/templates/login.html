@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Authentification" />
+  <meta name="author" content="nassim sebbagh" />
+
+<title>Authentification</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+</head>
+<body>
+
+ <div class="container">
+
+                  
+
+<div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+</div>
+
+
+ <div class="spacer col-md-4 col-md-offset-4 col-xs-12 ">
+
+ 
+
+
+
+  <div class="panel panel-primary">
+
+  <div class="panel-heading">Authentification</div>
+  <div class="panel-body">
+  
+   <div class="container">
+    <span style="color:red" th:if="${(param.username != null)}">
+     Identifiant ou mot de passe incorrect
+
+  </span>
+  </div>
+  
+  
+  <form th:action="@{/login}" method="post"> 
+ 
+   <div class="form-group">
+  <label class="control-label">Identifiant</label>
+  <input class="form-control" type="text" th:value="${#httpServletRequest.getParameter('username')}" placeholder="Email" name="username"  ></input>
+  </div>
+  <div class="form-group">
+  <label class="control-label">mot de passe</label>
+  <input class="form-control" type="password"placeholder="mot de passe" name="password" ></input>
+  </div>
+  
+  
+  
+ 
+   <div>
+  <button type="submit" class="btn btn-primary btn-block">Identifier</button>
+  </div>
+  
+  
+   <div>
+  <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+  </div>
+  <div>
+  <a th:href="@{/compteoubliee}">Informations de compte oubliées ?</a>
+  </div> 
+  
+  </form>
+  <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+    
+
+ 
+
+    
+     
+     
+<div>
+  <b>Vous n’avez pas de compte ?</b>
+  <a th:href="@{/register}">Inscription</a>
+  </div>
+  </div>
+   </div>
+  </div> 
+  
+
+  
+</body>
+</html>

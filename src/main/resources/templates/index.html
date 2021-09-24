@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+ <link  href="http://www.toutcool.com/styles.css" rel="stylesheet" />
+  
+  
+<title>Tellzem</title>
+</head>
+ 
+<body>
+     <header>
+          <h1>Tellzem<span class="Orange">.</span></h1>
+                     <nav>
+                          <ul>
+                              <!-- <li> <a href="mainimage">ACCUEIL</a></li>
+                              <li> <a href="steps">DESTINATION</a></li> -->
+                              <li> <a th:href="@{/register}">S'Inscrire</a></li>
+                              <li> <a href="/index">Se connecter</a></li>
+                          </ul>
+                   
+                      </nav>
+          
+     </header>
+         <section id="mainimage">
+                <div class="wrapper">
+                    <h2>Créer un chatbot  <br><strong>attirer de nouveaux clients.<br> et <br>augmenter sa notoriété</strong> </h2>
+                   
+                    <a th:href="@{/register}" class="button-1">Commencer gratuitement</a>
+                       
+                </div>
+           </section>
+</body>
+</html>

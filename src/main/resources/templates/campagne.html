@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Campagne</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" ></link>
+<link href="//cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></link>
+<script type="text/javascript" 
+src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>            <!-- datatable  -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>  <!-- datatable  -->
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>  <!-- datatable  -->
+<script type="text/javascript">
+    $(document).ready(function () {
+       $('#checkBoxAll').click(function(){
+    	   if ($(this).is(":checked"))
+    		   $('.chkCheckBoxId').prop('checked',true)
+    		   else
+    		   $('.chkCheckBoxId').prop('checked',false)
+       })	
+    })
+
+$(document).ready(function() {              <!-- datatable  -->
+    $('#example').DataTable( {
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
+    } );
+} );
+
+
+</script>
+
+<style>
+.divcontainer
+{padding: 25px 0px 50px 0px;}
+   
+
+</style>
+
+</head>
+<body>
+
+
+
+<div>
+
+</div>
+
+<div layout:fragment="content">
+
+  <div class="container">
+ 
+  <div class="panel panel-default">
+   
+  <!-- <div class="panel-heading"></div> -->
+  
+  
+<div class="alert alert-info" > Vos campagnes marketing </div>
+  
+  
+   <div class="container">
+
+<h5></h5>
+<h5></h5>
+
+<!-- <form  class="form-inline" th:action="@{messbrod(id=${idq})}"  method="post" class='input-group pull-left'>
+
+ <button type="submit" class="btn btn-primary"  >  Envoiyer sms </button>
+
+             
+<!--  <form th:action="@{journalquestion}" method="get" >
+ <label >Reply :</label>
+ <input type="text" type="hidden" name="id" th:value="${idq}"></input>
+ <input type="text" name="mc" th:value="${motcle}"></input>
+ <button class="btn btn-primary">Search</button>
+</form> -->
+</div>
+  <div class="panel-body">
+  
+  
+  <div class="divcontainer">
+<div class="container">
+  <div class="row">
+  <div class="col-sm-4">
+  </div>
+    <div class="col-sm-4">
+  <form th:action="@{shopcamp}" method="get">
+ <button type="submit" class="btn btn-primary"> + Créer une campagne </button>
+</form>
+ </div>
+ </div>
+ </div> 
+ 
+ 
+ </div>
+<!--  <form th:action="@{envoiyerone(idme=${idme})}" method="post">
+
+<h1>                 </h1>
+    <div class="form-group"> -->
+
+  <!--    <label class="control-label">Magasin * (Champ obligatoire)</label>
+  <input class="form-control" type="text" name="company" th:value="${message.company}"></input>
+ 
+  <label class="control-label">Message</label>
+
+  <textarea class="form-control" rows="3" id="comment"  name="text" th:fieled="*{message.text}" ></textarea>
+ 
+ 
+
+  <div>
+   <p><font  >                                  </font></p>
+  <input type="checkbox"  th:name="envoyer" th:value="true" >Envoyer pour touts les clients</input> 
+  
+ <p><font  >                                  </font></p>
+  <button type="submit" class="btn btn-primary">  Envoyer   </button> -->
+  </div>
+
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action<br /></a> 
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div> -->
+  
+  <!--  <input type="text" name="yes" th:value="${count}"></input>
+  <input type="text" name="no" th:value="${no}"></input>
+  <input type="text" name="type" th:value="${type}"></input> -->
+  
+  
+  
+  
+  
+ <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+ <thead>
+
+ <tr>
+  <!--  <th>   <input type="checkbox" id="checkBoxAll"   />       checked="checked"
+   <label>Sélectionner tout</label>
+   </th> -->
+  <!--  <th>  N° </th> -->
+   <th>  Nom de Campagne </th>
+   <th>  type </th>
+   <th>  Date Diffusion</th>
+   <th>  Statut</th>
+ </tr>
+ </thead>
+ <tbody>
+     <tr th:each="a:${listshop}">
+   <!-- <input type="checkbox" name="C2" value="deux" checked="checked" />2 -->
+   <!--  <td><input type="checkbox" class="chkCheckBoxId" th:name="codemag" th:value="${a.codemag}" /></td> --> <!-- checked="checked" -->
+     <!-- <td  th:text="${a.codemag}"></td> -->
+    <td  th:text="${a.nommag}"></td>
+     <td  th:text="${a.typecomp}"></td>
+     <td  th:text="${a.date}"></td>
+    <td  th:text="${a.statut}"></td>
+   
+   <!--  <td><a  th:href="@{envoiyerone(fromn=${a.fromn},idme=${idme})}">Envoyer</a></td> -->
+    
+      
+    
+     
+<!--      <td  th:text="${p.prix}"></td>
+     <td  th:text="${p.quantite}"></td> -->
+    
+     </tr>
+      
+ </tbody>
+ </table>
+ 
+  
+  
+
+  
+
+ 
+<!--  </div>
+<div>
+<ul class="nav nav-pills" >
+<li th:class="${pagecourant}==${status.index}?'active':''" th:each="pa,status:${pages}">
+<a th:href="@{contact(id=${idq},page=${status.index},size=${size},mc=${mc})}" th:text="${status.index}"></a>
+</li>
+</ul>
+</div> -->
+
+
+ 
+  
+
+<h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+
+    </div>
+ <h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+  </div> 
+  
+  <h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+  <h1></h1>
+<h1></h1>
+<h1></h1>
+<h1></h1>
+  </div>
+
+
+ 
+</body>
+</html>

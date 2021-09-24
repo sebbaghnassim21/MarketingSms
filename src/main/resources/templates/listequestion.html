@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Question</title>
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" ></link>
+<link href="//cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></link>
+<script type="text/javascript" 
+src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>            <!-- datatable  -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>  <!-- datatable  -->
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>  <!-- datatable  -->
+  <script src= "https://code.jquery.com/jquery-1.12.4.min.js"> </script> 
+  <script type="text/javascript"> 
+        $(document).ready(function() { 
+        	
+        	$('.btn btn-primary btn-block').prop('disabled', true);
+        	 if ( $( "#type" ).val() == "Campagne"){
+        		 $('.btn btn-primary btn-block').prop('disabled', true);
+        	    } else {
+        	    	 $('.btn btn-primary btn-block').prop('disabled', false);
+        	 }
+        }
+        </script>
+<style type="text/css">
+body { font-size:10pt }
+.lbar { float:left ; width:500px }
+.rbar { float:right ; width:100px }
+/* .middle { margin-left:400px; margin-right:400px } */
+
+</style>
+
+
+</head>
+<body>
+<div>
+
+</div>
+
+<div layout:fragment="content">
+
+  <div class="container">
+ 
+  <div class="panel panel-default">
+   
+ <!--  <div class="panel-heading">Question</div> -->
+
+ <div class="alert alert-info" > Le Scénario </div>
+  <div class="panel-body">
+ 
+  <div class="row">
+        <div class="col-xs-2">
+
+<!-- <form  class="form-inline" th:action="@{newquestion(id=${id})}"  method="post" class='input-group pull-left'>
+
+ <button type="submit" class="btn btn-primary"  >  Nouveau </button>
+
+
+</form> -->
+<!-- <input class="form-control" type="text" id="type" name="text" th:value="${type}"></input> -->
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">+ Ajouter un message
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+   
+   
+    <li><form  class="form-inline" th:action="@{newquestion(id=${id},type=${type})}"  method="post" class='input-group pull-left'>
+
+ <button type="submit" class="btn btn-link"  >Question simple</button>
+
+
+</form> </li>
+
+
+    <li><form  class="form-inline" th:action="@{questionoui(id=${id},type=${type})}"  method="post" >
+
+ <button type="submit" class="btn btn-link"  >  Question (Oui ou Non) </button>
+</form></li>
+  
+  
+  
+  
+    <li><form  class="form-inline" th:action="@{message(id=${id},type=${type})}" method="post" >
+
+ <button type="submit" class="btn btn-link"   >   Message simple   </button>
+</form></li>
+  </ul>
+</div>
+
+
+
+
+
+   </div>
+       
+
+
+
+
+
+
+ <table class="table">
+ <thead>
+ <tr>
+   <th>  </th> <!--<th> Type</th>  <th> Prix</th> <th>Qtes</th> -->
+ </tr>
+ </thead>
+ <tbody>
+     <tr th:each="a:${question}">
+     <td style="white-space:pre-wrap; word-wrap:break-word" th:text="${a.text}"></td>
+   <!--   <td  th:text="${a.type}"></td> -->
+      
+    
+      
+    
+     
+<!--      <td  th:text="${p.prix}"></td>
+     <td  th:text="${p.quantite}"></td> -->
+     <td><a onclick="return confirm(' Êtes-vous sûr de vouloir supprimer !') " th:href="@{deleteq(id=${a.id})}">Supprimer</a></td>
+     <td><a  th:href="@{editquestion(id=${a.id},type=${a.type},idm=${id},t=${type})}">Modifier</a></td>
+    <!--  <td><a  th:href="@{journalquestion(id=${a.id})}">Réponses</a></td> -->
+     </tr>
+
+ </tbody>
+ </table>
+ 
+  
+  
+  <form th:action="@{/filtre(email=${#httpServletRequest.remoteUser},id=${id},type=${type})}" method="post">
+
+
+
+<div class="rbar">
+    <button  type="submit" id="suivant" class="btn btn-primary btn-block">OK</button>  
+ 
+  </div>
+</form> 
+
+
+
+
+
+ </div>
+</div>
+
+
+
+    </div>
+ 
+  </div> 
+  </div>
+ 
+
+
+ 
+</body>
+</html>
+

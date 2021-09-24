@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coupons</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" ></link>
+<link href="//cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></link>
+<script type="text/javascript" 
+src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>            <!-- datatable  -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>  <!-- datatable  -->
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>  <!-- datatable  -->
+  <script src= "https://code.jquery.com/jquery-1.12.4.min.js"> </script> 
+  
+<style>
+.divcontainer
+{padding: 25px 0px 50px 0px;}
+   
+
+</style>
+</head>
+<body>
+
+
+<div>
+
+</div>
+
+<div layout:fragment="content">
+
+  <div class="container">
+ 
+  <div class="panel panel-default">
+   
+ <!--  <div class="panel-heading">List </div> -->
+  <div class="alert alert-info" > Vos Coupons </div>
+  <div class="panel-body">
+  
+  
+  
+   <div class="divcontainer">
+<div class="container">
+  <div class="row">
+  <div class="col-sm-4">
+  </div>
+    <div class="col-sm-4">
+  
+<form th:action="@{shopmag}" method="get">
+ <button type="submit" class="btn btn-primary"> + Créer un coupon </button>
+</form>
+  </div>
+ </div>
+ </div> 
+ 
+ 
+ </div>
+ 
+ 
+ 
+ <table class="table">
+ <thead>
+ <tr>
+  <th> Coupon</th>   <th> Déclencheur </th>   <th>  N° TEL </th> <!-- <th> Prix</th> <th>Qtes</th> -->
+ </tr>
+ </thead>
+ <tbody>
+     <tr th:each="a:${listshop}">
+     <td  th:text="${a.nommag}"></td>
+     <td  th:text="${a.codesms}"></td>
+      
+    
+      <td  th:text="${a.twilio}"></td>
+    
+     
+<td>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"> Menu
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+   
+   
+    <li><a  onclick="return confirm('Êtes-vous sûr de vouloir supprimer !') " th:href="@{delete(id=${a.codemag})}">Supprimer</a> </li>
+
+
+    <li><a  th:href="@{editmag(id=${a.codemag})}">Modifier</a></li>
+  
+  
+    <li><a   th:href="@{listequestion(id=${a.codemag},type=0)}">Le scénario</a></li>
+    
+    <li><a  th:href="@{contact(id=${a.codemag})}">Les participants</a></li>
+  </ul>
+</div></td>
+ 
+<!--      <td  th:text="${p.prix}"></td>
+     <td  th:text="${p.quantite}"></td> 
+     <td><a onclick="return confirm('Êtes-vous sûr de vouloir supprimer !') " th:href="@{delete(id=${a.codemag})}">Supprimer</a></td>
+     <td><a th:href="@{editmag(id=${a.codemag})}">Modifier</a></td>
+     <td><a  th:href="@{listequestion(id=${a.codemag},type=0)}">Le scénario</a></td>
+     <td><a  th:href="@{contact(id=${a.codemag})}">Les participants</a></td>-->
+     </tr>
+      
+ </tbody>
+ </table>
+ 
+ </div>
+
+
+
+
+    </div>
+ 
+  </div> 
+  </div>
+  
+ 
+</body>
+</html>

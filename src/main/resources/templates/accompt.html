@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>template</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+
+</head>
+<body>
+
+ <div class="container" layout:fragment="content">
+  <div class="panel panel-default">
+  <div class="panel-heading">Compte</div>
+  <div class="panel-body">
+  <form th:action="@{/saveuser(mail=${#httpServletRequest.remoteUser})}" method="post"> 
+  
+
+ 
+ 
+  
+  
+   <div class="form-group">
+
+  <label class="control-label">Nom</label>
+  <input class="form-control" type="text" name="firstName" th:value="${p.firstName}"></input>
+  </div>
+  
+      <div class="form-group">
+
+  <label class="control-label">Prenom</label>
+  <input class="form-control" type="text" name="lastName" th:value="${p.lastName}"></input>
+  </div>
+  
+      <div class="form-group">
+
+  <label class="control-label">Compagnie</label>
+  <input class="form-control" type="text" name="compagnie" th:value="${p.compagnie}"></input>
+  </div>
+  
+   
+    <div class="form-group">
+
+  <label class="control-label">Adresse</label>
+  <input class="form-control" type="text" name="adresse" th:value="${p.adresse}"></input>
+  </div>
+  
+  
+  <div class="form-group">
+
+  <label class="control-label">Ville</label>
+  <input class="form-control" type="text" name="city" th:value="${p.city}"></input>
+  </div>
+  
+   <div class="form-group">
+
+  <label class="control-label">Province</label>
+  <input class="form-control" type="text" name="Province" th:value="${p.Province}"></input>
+  </div>
+  
+    <div class="form-group">
+
+  <label class="control-label">Code postal</label>
+  <input class="form-control" type="text" name="Postalcode" th:value="${p.Postalcode}"></input>
+  </div>
+  
+      <div class="form-group">
+
+  <label class="control-label">Pays</label>
+  <input class="form-control" type="text" name="country" th:value="${p.country}"></input>
+  </div>
+  
+        
+    
+      <div class="form-group">
+
+  <label class="control-label">Tel</label>
+  <input class="form-control" type="text" name="Tel" th:value="${p.Tel}"></input>
+  </div>
+  
+    
+      <div class="form-group">
+
+  <label class="control-label">Fax</label>
+  <input class="form-control" type="text" name="fax" th:value="${p.fax}"></input>
+  </div>
+  
+  
+       <div class="form-group">
+
+  <label class="control-label">N° TEL</label>
+  <input class="form-control" type="text" name="twilio" th:value="${p.twilio}"></input>
+  </div>
+  
+    
+      <div class="form-group">
+
+  <label class="control-label">ACCOUNT_SID</label>
+  <input class="form-control" type="text" name="accountsid" th:value="${p.accountsid}"></input>
+  </div>
+       <div class="form-group">
+
+  <label class="control-label">AUTH_TOKEN</label>
+  <input class="form-control" type="text" name="authtoken" th:value="${p.authtoken}"></input>
+  </div>
+  
+  
+   <div>
+  <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+  
+  
+  </form>
+  
+  <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+
+  
+ 
+  </div>
+ 
+  </div> 
+  </div>
+
+
+
+
+
+</body>
+</html>

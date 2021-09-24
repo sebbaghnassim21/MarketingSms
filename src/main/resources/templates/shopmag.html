@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Coupon</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+
+</head>
+<body>
+
+
+
+<div layout:fragment="content">
+
+  <div class="container">
+  <div class="spacer col-md-8 col-md-offset-2 col-xs-12 ">
+  <div class="panel panel-default">
+   
+  <div class="panel-heading">Coupon</div>
+  <div class="panel-body">
+  
+ <form th:action="@{/savemag(email=${#httpServletRequest.remoteUser})}" method="post">
+  
+<h1>                 </h1>
+   <!-- <div class="form-group"> -->
+
+  
+ 
+  <label class="control-label">Coupon</label>
+  <input class="form-control" type="text" name="nommag" th:fieled="*{shop.nommag}"></input>
+ 
+
+  <label class="control-label">Déclencheur</label>
+  <input class="form-control" type="text" name="codesms" th:fieled="*{shop.codesms}"></input>
+
+ <label class="control-label">N° TEL</label>
+  <input class="form-control" type="text" name="twilio" th:fieled="*{shop.twilio}"></input>
+
+
+ <label class="control-label">Auth Token</label>
+  <input class="form-control" type="text" name="authtoken" th:fieled="*{shop.authtoken}"></input>
+
+
+ <label class="control-label">Account SID</label>
+  <input class="form-control" type="text" name="accountsid" th:fieled="*{shop.accountsid}"></input>
+  
+ <div >
+ <p><font  >                                  </font></p>
+  <button type="submit" class="btn btn-primary">Sauvegarder</button>
+  </div>
+
+  </form>
+
+    </div>
+ 
+  </div> 
+  </div>
+  </div>
+  </div>
+</body>
+</html>

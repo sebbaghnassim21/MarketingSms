@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>liste commerces</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+
+</head>
+<body>
+
+
+<div>
+
+</div>
+
+<div layout:fragment="content">
+
+  <div class="container">
+ 
+  <div class="panel panel-default">
+   
+  <div class="panel-heading">Liste commerces</div>
+  
+  <div class="panel-body">
+  
+<form th:action="@{noumag}" method="get">
+ <button type="submit" class="btn btn-primary"> Nouveau </button>
+</form>
+ 
+ <table class="table">
+ <thead>
+ <tr>
+   <th> Commerce </th> <th> Adresse</th><th>  Forfait </th> <!-- <th> Prix</th> <th>Qtes</th> -->
+ </tr>
+ </thead>
+ <tbody>
+     <tr th:each="a:${listmagasin}">
+     <td  th:text="${a.nommagasin}"></td>
+     <td  th:text="${a.adressemag}"></td>
+      
+    
+      <td  th:text="${a.forfait}"></td>
+    
+     <td><a  th:href="@{editmagsin(id=${a.codemagasin})}">Modifier</a></td>
+     <td><a onclick="return confirm('Êtes-vous sûr de vouloir supprimer !') " th:href="@{deletemag(id=${a.codemagasin})}">Supprimer</a></td>
+ 
+<!--      <td  th:text="${p.prix}"></td>
+     <td  th:text="${p.quantite}"></td> -->
+    <!--  <td><a onclick="return confirm('Êtes-vous sûr de vouloir supprimer !') " th:href="@{delete(id=${a.codemag})}">Supprimer</a></td>
+     <td><a  th:href="@{editmag(id=${a.codemag})}">Modifier</a></td>
+     <td><a  th:href="@{listequestion(id=${a.codemag})}">Message</a></td>
+     <td><a  th:href="@{contact(id=${a.codemag})}">Clients</a></td> -->
+     </tr>
+      
+ </tbody>
+ </table>
+ 
+ </div>
+
+
+
+
+    </div>
+ 
+  </div> 
+  </div>
+  
+ 
+</body>
+</html>

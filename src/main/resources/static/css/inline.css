@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+body{
+    font-family: Georgia;
+    font-size: 11pt;
+}
+  
+h2{
+    text-align: center;
+}
+  
+#global{
+  width:100%;
+}
+#droite, #gauche {
+    display: inline-block;
+    vertical-align: top;
+}
+#gauche {
+    width:50%; 
+}
+ 
+#droite {
+    width: 50%;
+}

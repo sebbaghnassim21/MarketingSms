@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Filtre</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+
+<style type="text/css">
+body { font-size:10pt }
+.lbar { float:left ; width:500px }
+.rbar { float:right ; width:100px }
+/* .middle { margin-left:400px; margin-right:400px } */
+
+</style>
+
+
+</head>
+<body>
+<div layout:fragment="content">
+
+  <div class="container">
+  <div class="spacer col-md-8 col-md-offset-2 col-xs-12 ">
+  <div class="panel panel-default">
+   
+  <div class="panel-heading">Filtre</div>
+  <div class="panel-body">
+
+<div>
+ <label class="control-label">Clients </label>
+</div>
+<div>
+
+ <form th:action="@{questionfiltre}"   method="get" >
+
+<select class="form-control" name="code" id="example">
+     <option value="0">ALL</option>
+     <option value="00">Saisie Manuelle</option>
+     <option th:each="shop : ${shop}"
+             th:value="${shop.codemag}"
+             
+             th:text="${shop.nommag}">
+     </option>
+</select>
+<input class="form-control" type="hidden" name="id" th:value=${idcamp}></input>
+<h1>                 </h1>
+<h1>                 </h1>
+<div class="rbar">
+ <button class="btn btn-primary" type="submit" name="action" value="filtr">Filtre...</button>
+ </div>
+ <h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+ <h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+ <h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+ <div class="rbar">
+ <button class="btn btn-primary" type="submit" name="action"  value="ajouter">Ajouter...</button>
+ </div>
+ <h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+ <h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+ <h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+ <div class="lbar">
+ <button class="btn btn-primary" type="submit" name="action"  value="suivant">Suivant</button>
+ 
+ </div>
+ 
+</form>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+<h1>                 </h1>
+
+
+</div>
+
+</div></div></div></div></div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Nouveau commerce</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+ <link  href="http://www.toutcool.com/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+
+
+<div layout:fragment="content">
+
+  <div style="margin-bottom:60px" class="container">
+  <div class="spacer col-md-8 col-md-offset-2 col-xs-12 ">
+  <div class="panel panel-default">
+   
+  <div class="panel-heading">Nouveau commerce</div>
+  <div class="panel-body">
+  
+ <form th:action="@{/savenoumag(email=${#httpServletRequest.remoteUser})}"  method="post" name="formSaisie" onsubmit="return valider()">
+  
+  
+
+        
+ 
+
+  
+ 
+  <label  class="control-label">* Commerce</label>
+  <input class="form-control" type="text" name="nommagasin" id="nommagasin" th:fieled="*{nommagasin}"  required></input>
+ 
+
+ <div class="form-group ">
+  <label class="control-label">* Adresse</label>
+  <input class="form-control" type="text" name="adressemag" id="adressemag" th:fieled="*{adressemag}" required></input>
+
+ <label class="control-label">N° TEL</label>
+  <input class="form-control" type="text" name="ntel" th:fieled="*{magasin.ntel}"></input>
+
+
+ <label class="control-label">Site</label>
+  <input class="form-control" type="text" name="site" th:fieled="*{magasin.site}"></input>
+</div>
+
+<!--  <label class="control-label">Auth Token</label>
+  <input class="form-control" type="text" name="authtoken" th:fieled="*{shop.authtoken}"></input>
+
+
+ <label class="control-label">Account SID</label>
+  <input class="form-control" type="text" name="accountsid" th:fieled="*{shop.accountsid}"></input>
+   -->
+
+ <div style="margin-top: 30px">
+ <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+   
+      <div class="caption">
+        <h3>Gratuit</h3>
+        <p>.......................<br />.....................<br />............</p>
+         <button type="submit"  class="btn btn-primary btn-block">Continuer</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ </div>
+ 
+ 
+
+ 
+
+  
+  
+  
+  
+   
+   
+   
+   
+   
+ <div style="margin-top: 30px">
+ 
+ 
+ 
+ <p><font  >                                  </font></p>
+ 
+ 
+ 
+
+  </div>
+
+  </form>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+function valider() {
+	var i="";
+	var o="";
+	var a=0;
+  // si la valeur du champ prenom est non vide
+  if(document.formSaisie.nommagasin.value != "") {
+		    // alors on envoie le formulaire
+		   // document.formSaisie.submit();
+		    a=a+1;
+		    
+			  
+		  }
+  else {
+	  
+	  i="Saisissez le nom de commerce";
+  }
+  
+  
+  if(document.formSaisie.adressemag.value != "") {
+	    // alors on envoie le formulaire
+	   // document.formSaisie.submit();
+	    a=a+1;
+	   
+		 
+	  }
+  else{
+	  o="Saisissez l'adresse";
+  }
+  if(a==2){
+	  
+	  return true;
+	  
+  }
+  
+  if (a!=2){
+    // sinon on affiche un message
+    alert(" les champs marqués d'un * sont obligatoires ");
+    return false;
+  }
+}
+
+//]]>
+</script>
+
+    </div>
+ 
+  </div> 
+  </div>
+  </div>
+  </div>
+</body>
+</html>

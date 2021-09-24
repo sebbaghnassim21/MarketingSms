@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="User account registration" />
+  <meta name="author" content="nassim sebbagh" />
+  <link rel="icon" href="favicon.ico" />
+
+  <title>initialiser mot de pass</title>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+</head>
+<body>
+<div class="container">
+
+                  
+
+<div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+</div>
+
+
+ <div class="spacer col-md-4 col-md-offset-4 col-xs-12 ">
+
+ 
+
+
+
+  <div class="panel panel-primary">
+
+  <div class="panel-heading">Confirmation</div>
+  <div class="panel-body">
+      
+      
+
+
+        <div th:if="${confirmationMessage}" class="alert alert-success"
+          role="alert" th:text=${confirmationMessage}></div>
+         
+         
+          <div>
+  <form method="get" th:action="@{/index}"> 
+    <button type="submit" class="btn btn-primary btn-block">Accueil</button>
+</form>
+</div>
+          
+         
+    </div>
+  </div>
+</div>
+
+
+ 
+</body>
+
+</html>

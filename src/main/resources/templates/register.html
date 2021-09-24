@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="User account registration" />
+  <meta name="author" content="nassim sebbagh" />
+  <link rel="icon" href="favicon.ico" />
+
+  <title>Page d'inscription</title>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+</head>
+<body>
+<div class="container">
+
+                  
+
+<div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+     <div class="row">
+
+    <div class="col-sm-4">
+      <h3></h3>
+    </div>
+     </div>
+</div>
+
+
+ <div class="spacer col-md-4 col-md-offset-4 col-xs-12 ">
+
+ 
+
+
+
+  <div class="panel panel-primary">
+
+  <div class="panel-heading">Nouveau utilisateur</div>
+  <div class="panel-body">
+      
+      
+
+      <form autocomplete="off" action="#" th:action="@{/register}"
+        th:object="${user}" method="post" class="m-t" role="form"
+        data-toggle="validator">
+
+        <div th:if="${confirmationMessage}" class="alert alert-success"
+          role="alert" th:text=${confirmationMessage}></div>
+          
+          
+           <div th:if="${alreadyRegisteredMessage}"
+          class="alert alert-danger" role="alert"
+          th:text="${alreadyRegisteredMessage}"></div>
+
+        <div th:if="${errorMessage}"
+          class="alert alert-danger" role="alert"
+          th:text="${errorMessage}"></div>
+
+
+        <div th:if="${#fields.hasErrors('firstName')}"
+          th:errors="*{firstName}"
+          class="validation-message alert alert-danger" role="alert"></div>
+
+        <div th:if="${#fields.hasErrors('lastName')}"
+          th:errors="*{lastName}"
+          class="validation-message alert alert-danger" role="alert"></div>
+          
+          <div th:if="${#fields.hasErrors('titre')}"
+          th:errors="*{titre}"
+          class="validation-message alert alert-danger" role="alert"></div>
+
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+          class="validation-message alert alert-danger" role="alert"></div>
+
+        <div class="form-group ">
+          <label th:if="${#fields.hasErrors('firstName')}"
+            th:errors="*{firstName}" class="validation-message"></label>
+      <!--      <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span>-->
+          
+          <input type="text" th:field="*{firstName}"
+            placeholder="Nom" class="form-control" required />
+         <span class="glyphicon form-control-feedback"
+            aria-hidden="true"></span>
+        </div> 
+
+        <div class="form-group ">
+        <!--  <span class="input-group-addon">
+            <span class="glyphicon glyphicon-user"></span>
+          </span> -->
+          <input type="text" th:field="*{lastName}"
+            placeholder="Prenom" class="form-control" required />
+          <span class="glyphicon form-control-feedback"
+            aria-hidden="true"></span>
+        </div>
+        
+        
+             <div class="form-group">
+             
+            <select class="form-control"  name="titre" th:fieled="*{titre}">
+                <option>Monsieur</option>
+                <option>Madame </option>
+  
+            </select>
+            </div>
+
+        <div class="form-group">
+       <!--   <span class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </span>  -->
+          <input type="email" th:field="*{email}"
+            placeholder="Email" class="form-control"
+            data-error="Cette adresse e-mail est invalide" required />
+          <span class="glyphicon form-control-feedback"
+            aria-hidden="true"></span>
+
+        </div>
+       
+        <button type="submit"
+          class="btn btn-primary btn-block">S'inscrire</button>
+
+      </form>
+     
+    </div>
+  </div>
+</div>
+
+ <!-- jQuery-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+  <!-- Bootstrap -->
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Validator plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+ 
+</body>
+
+</html>

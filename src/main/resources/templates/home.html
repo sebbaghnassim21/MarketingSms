@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Tellzem</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+
+<link rel="stylesheet"  href="http://localhost:8080/Style.css" ></link>
+
+<style type="text/css">
+body { font-size:10pt }
+.lbar { float:left ; width:500px }
+.rbar { float:right ; width:500px }
+/* .middle { margin-left:400px; margin-right:400px } */
+
+</style>
+
+</head>
+<body>
+
+
+
+<div layout:fragment="content">
+ 
+  <div class="container">
+  <div class="panel panel-default">
+  <div class="panel-heading"></div>
+  <div class="panel-body">
+ 
+ 
+ 
+ 
+  
+<h1>                 </h1>
+<h1 th:inline="text">Nous sommes ravis de vous accueillir ,[[${titre}]] [[${name}]] [[${prenom}]]</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+
+ 
+  </div> 
+  </div>
+  </div>
+</body>
+</html>

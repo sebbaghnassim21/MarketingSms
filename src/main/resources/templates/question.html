@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Question simple</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" ></link>
+</head>
+<body>
+
+
+
+<div layout:fragment="content">
+
+  <div class="container">
+  <div class="spacer col-md-8 col-md-offset-2 col-xs-12 ">
+  <div class="panel panel-default">
+   
+ <!--  <div class="panel-heading">Modifier question</div> -->
+  <div class="alert alert-info" >  Question simple </div>
+  <div class="panel-body">
+  
+ <form th:action="@{savequestionedit(type='question',idm=${idm},t=${t})}" method="post">
+  
+<h1>                 </h1>
+   <!-- <div class="form-group"> -->
+
+ 
+  <input class="form-control" type="text" type="hidden" name="id" th:value="${question.id}"></input>
+  <input class="form-control" type="text" type="hidden" name="nques" th:value="${question.nques}"></input>
+ 
+  <!-- <label class="control-label">Question</label> -->
+<!--   <input class="form-control" type="text" name="text" th:value="${question.text}"></input> -->
+  <textarea class="form-control" rows="3" id="comment"  name="text"  th:field="*{question.text}"></textarea>
+  
+ 
+ 
+ 
+
+  
+ <div>
+ <p><font  >                                  </font></p>
+  <button type="submit" class="btn btn-primary">  Sauvegarder   </button>
+  </div>
+
+  </form>
+
+    </div>
+ 
+  </div> 
+  </div>
+  </div>
+  </div>
+</body>
+</html>
